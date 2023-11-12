@@ -20,6 +20,11 @@ body {
 .number {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 5px;
+    border-radius: 8px;
+}
+
+.number:hover, .number:focus {
+    cursor: pointer;
 }
 
 /* Hier startet der Style für den Modal*/
@@ -44,6 +49,20 @@ body {
     background-image: url(assets/background.png);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers children horizontally in the column */
+    text-align: center;  /* This ensures inline or inline-block elements like text are centered */
+}
+
+#teacher_photo {
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
 
 #close {
     color: #ccc;
