@@ -27,6 +27,10 @@ body {
     cursor: pointer;
 }
 
+#audio {
+    margin-left: 80%;
+}
+
 /* Hier startet der Style für den Modal*/
 .modal {
     display: none;
