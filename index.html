@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
 
     <title>Adventskalender</title>
 </head>
 <body> 
+    <audio id="audio" controls src="assets/background_music.mp3" type="audio/mp3" autoplay="true">
+        <p>Dein Browser kann dieses HTML5 Audio Element nicht abspielen.</p>
+    </audio>
 
     <!-- Kopfzeile mit Logo und Hauptüberschrift -->
     <div id="header">
         <img src="./assets/logo.png" id="logo">
-        <h1>LEHRERADVENTSKALENDER</h1>
+        <h1 id="title">LEHRERADVENTSKALENDER</h1>
     </div>
 
     <!-- Tabelle für die Anzeige des Adventskalenders -->
@@ -54,9 +58,7 @@
         </tbody>
     </table>
 
-    <audio id="audio" controls src="assets/background_music.mp3" type="audio/mp3">
-        <p>Dein Browser kann dieses HTML5 Audio Element nicht abspielen.</p>
-    </audio>
+
 
     <!-- Modal-Struktur für die Anzeige von Türchen-Inhalten -->
     <div id="modal1" class="modal">

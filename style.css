@@ -17,6 +17,13 @@ body {
     gap: 20px;
 }
 
+#title {
+    font-family: 'Mountains of Christmas';
+    font-weight: bold;
+    color: #B60A0C;
+    font-size: 350%
+}
+
 .number {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 5px;
@@ -50,7 +57,7 @@ body {
     padding: 20px;
     width: 40%;
     border-radius: 15px;
-    background-image: url(assets/background.png);
+    background-image: url(assets/background_vertical.png);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -61,10 +68,23 @@ body {
     text-align: center;  /* This ensures inline or inline-block elements like text are centered */
 }
 
+#modal-title {
+    font-family: 'Mountains of Christmas';
+    font-weight: bold;
+    color: black;
+    font-size: 300%;
+}
+
 #teacher_photo {
     width: 50%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+}
+
+#modal-text {
+    font-family: 'Mountains of Christmas';
+    font-size: 150%;
+    font-weight: bold;
 }
 
 
