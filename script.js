@@ -40,7 +40,7 @@ var tuerchenInhalt = [
         datum: "12-06",
         titel: "Günter Hämmerle",
         bild: "assets/teachers/Guenter_Haemmerle.jpg",
-        text: "Günter ist seit diesem Jahr wegen der ersten Klassenreihe, sehr genervt von uns. Er ist auch gut, die Schüler beim Zocken zu erwischen. Das erste Opfer war der Umut mit seiner 5er Mitarbeit. Griechenland ist das Land, was er jede Ferien besuchen muss. Vor kurzem kaufte er auch ein Haus am Meer in Griechenland. Er weiß auch selbst, dass wir in seinem Unterricht nichts verstehen und deshalb auch mit dem Stoff nicht weiterkommen."
+        text: "Günter ist seit diesem Jahr wegen der ersten Klassenreihe, sehr genervt von uns. Er ist auch gut, die Schüler beim Zocken zu erwischen. Dann heisst es BÜCHSA ZUA! oder BLECH WEG!. Das erste Opfer war der Umut mit seiner 5er Mitarbeit. Griechenland ist das Land, was er jede Ferien besuchen muss. Vor kurzem kaufte er auch ein Haus am Meer in Griechenland. Er weiß auch selbst, dass wir in seinem Unterricht nichts verstehen und deshalb auch mit dem Stoff nicht weiterkommen."
     },
     {
         id: "number7",
@@ -158,7 +158,7 @@ var tuerchenInhalt = [
         id: "number23",
         datum: "12-23",
         titel: "Robert Soster",
-        bild: "assets/teachers/Robert_Soster.jpg",
+        bild: "assets/teachers/Robert_Soster.png",
         text: "Wir hatten zwar den Lehrer nur einmal während der Mathe Schularbeit aber der Lehrer hat jedem im Visier. Während der Schularbeit mit diesem Lehrer hat man keine Chance in irgendeine Richtung zu schauen. Willst du kurz zu deinem Kolleg rüber schauen? Während du gerade nach der Lösung fragen willst, hörst du schon sein Geschrei von der anderen Seite des Klassenraumes."
     },
     {
@@ -193,11 +193,13 @@ function isTuerchenOeffenbar(datum) {
 //Funktion, um das Modal zu öffnen und mit Inhalten zu füllen
 function openModal(tuerchenId) {
     var tuerchen = tuerchenInhalt.find(t => t.id === tuerchenId);
-    if (tuerchen && isTuerchenOeffenbar(tuerchen.datum)) {
+    if (tuerchen || isTuerchenOeffenbar(tuerchen.datum)) {
         document.getElementById("modal-title").textContent = tuerchen.titel;
         document.getElementById("teacher_photo").src = tuerchen.bild;
         document.getElementById("modal-text").textContent = tuerchen.text;
         modal.style.display = 'block';
+        modal.style.opacity = 0;
+        setTimeout(() => modal.style.opacity = 1, 100);
     } else {
         alert("Dieses Türchen kann noch nicht geöffnet werden!");
     }
@@ -224,3 +226,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+function aktualisiereCountdown() {
+    const jetzt = new Date();
+    const weihnachten = new Date(jetzt.getFullYear(), 11, 24); // Monate sind 0-basiert in JavaScript
+    const differenz = weihnachten - jetzt;
+
+    const tage = Math.floor(differenz / (1000 * 60 * 60 * 24));
+    const stunden = Math.floor((differenz / (1000 * 60 * 60)) % 24);
+    const minuten = Math.floor((differenz / 1000 / 60) % 60);
+    const sekunden = Math.floor((differenz / 1000) % 60);
+
+    document.getElementById('tage').textContent = tage;
+    document.getElementById('stunden').textContent = stunden;
+    document.getElementById('minuten').textContent = minuten;
+    document.getElementById('sekunden').textContent = sekunden;
+}
+
+setInterval(aktualisiereCountdown, 1000);
