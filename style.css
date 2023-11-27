@@ -28,10 +28,12 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 5px;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 .number:hover, .number:focus {
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 #audio {
