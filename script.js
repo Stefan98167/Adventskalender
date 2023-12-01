@@ -2,7 +2,7 @@
 var tuerchenInhalt = [
     {
         id: "number1",
-        datum: "11-01",
+        datum: "12-01",
         titel: "Rainer Längle",
         bild: "assets/teachers/Rainer_Laengle.jpg",
         text: "Im Schlosshofen Unternehmen übernimmt dieser Goofy allein 7 Abteilungen. Jedes Wochenende zerstört er den Schüler mit der sogenannten Wochenmail, die von ¾ der Klasse nicht einmal als Benachrichtigung angezeigt wird. Mit seinen Sätzen wie: „Mal der Enver“ oder “Mal der Paul bitte“ oder auch „mal der Stefan“ (gemeint ist Ishan), macht diesen Lehrer einzigartig. Auch der reverse Fade steht im sehr gut auf dem Kopf."
@@ -131,7 +131,7 @@ var tuerchenInhalt = [
         datum: "12-19",
         titel: "Wolfgang Neff",
         bild: "assets/teachers/Wolfgang_Neff.jpeg",
-        text: "Neff Abe ist in dem meisten Zeiten brutal Braindead. Sein NWES-Unterricht war einer der langweiligsten Fächer in der Schule. Mit seiner „offiziellen Begrüßung“ fängt der Lehrer mit dem Unterricht an. Bei fragen während der Programmierung, kommt man mit weniger Informationen zurück zu seinem Platz. Wenn er den Code vor dir auf seinem PC schreibt, darfst du kein Bild davon machen. Auch wenn man ein Bild davon macht, es funktioniert nicht."
+        text: "Neff Abe ist in dem meisten Zeiten brutal Braindead. Sein NWES-Unterricht war einer der langweiligsten Fächer in der Schule. Mit seiner „offiziellen Begrüßung“ fängt der Lehrer mit dem Unterricht an. Bei fragen während der Programmierung, kommt man mit weniger Informationen zurück zu seinem Platz. Wenn er den Code vor dir auf seinem PC schreibt, darfst du kein Bild davon machen. Auch wenn man ein Bild davon macht, es funktioniert nicht, aber das ist halt so."
     },
     {
         id: "number20",
@@ -183,7 +183,7 @@ window.addEventListener('click', clickOutside);
 //Funktion, um das Datum zu überprüfen
 function isTuerchenOeffenbar(datum) {
     var heute = new Date();
-    var [monat, tag] = datum.split("-");
+    var [monat, tag] = datum.split("-"); 
     var tuerchenDatum = new Date(heute.getFullYear(), monat - 1, tag);
 
     return heute >= tuerchenDatum;
@@ -193,7 +193,7 @@ function isTuerchenOeffenbar(datum) {
 //Funktion, um das Modal zu öffnen und mit Inhalten zu füllen
 function openModal(tuerchenId) {
     var tuerchen = tuerchenInhalt.find(t => t.id === tuerchenId);
-    if (tuerchen && isTuerchenOeffenbar(tuerchen.datum)) {
+    if (tuerchen) {
         document.getElementById("modal-title").textContent = tuerchen.titel;
         document.getElementById("teacher_photo").src = tuerchen.bild;
         document.getElementById("modal-text").textContent = tuerchen.text;
