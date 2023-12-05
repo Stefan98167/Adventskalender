@@ -193,7 +193,7 @@ function isTuerchenOeffenbar(datum) {
 //Funktion, um das Modal zu öffnen und mit Inhalten zu füllen
 function openModal(tuerchenId) {
     var tuerchen = tuerchenInhalt.find(t => t.id === tuerchenId);
-    if (tuerchen) {
+    if (tuerchen && isTuerchenOeffenbar(tuerchen.datum)) {
         document.getElementById("modal-title").textContent = tuerchen.titel;
         document.getElementById("teacher_photo").src = tuerchen.bild;
         document.getElementById("modal-text").textContent = tuerchen.text;
